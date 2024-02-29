@@ -4,6 +4,7 @@ import 'package:shop_app/bloc_observer.dart';
 import 'package:shop_app/cubits/cubit/app_cubit.dart';
 import 'package:shop_app/service/local/cache_helper.dart';
 import 'package:shop_app/screens/onbording_screen.dart';
+import 'package:shop_app/widgets/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,16 +31,8 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              scaffoldBackgroundColor: Colors.white,
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            darkTheme: ThemeData(
-              scaffoldBackgroundColor: Colors.black,
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
+            theme: ligthTheme(),
+            darkTheme: darkTheme(),
             themeMode:
                 AppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
             home: const OnboardingScreen(),

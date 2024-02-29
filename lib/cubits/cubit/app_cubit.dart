@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/network/local/cache_helper.dart';
+import 'package:shop_app/service/local/cache_helper.dart';
 
 part 'app_state.dart';
 
