@@ -7,6 +7,7 @@ ThemeData ligthTheme() => ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
 
       scaffoldBackgroundColor: Colors.white,
+      fontFamily: 'open_sans',
       iconTheme: const IconThemeData(color: Colors.black),
       appBarTheme: const AppBarTheme(
           // backWardsCOmpatibility: false,  [ deleted from AppBarTheme ]
@@ -22,6 +23,7 @@ ThemeData ligthTheme() => ThemeData(
           )),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: Colors.deepOrange,
+        foregroundColor: Colors.white,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
@@ -42,8 +44,10 @@ ThemeData ligthTheme() => ThemeData(
 
 ThemeData darkTheme() => ThemeData(
       scaffoldBackgroundColor: Colors.black,
+      fontFamily: 'open_sans',
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
       // primarySwatch: Colors.deepOrange,
+
       appBarTheme: const AppBarTheme(
           // backWardsCOmpatibility: false,  [ deleted from AppBarTheme ]
           systemOverlayStyle: SystemUiOverlayStyle(
@@ -59,6 +63,10 @@ ThemeData darkTheme() => ThemeData(
           iconTheme: IconThemeData(
             color: Colors.white,
           )),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: Colors.deepOrange,
+        foregroundColor: Colors.black,
+      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.deepOrange,
