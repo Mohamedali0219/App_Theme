@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/cubits/cubit/app_cubit.dart';
+import 'package:shop_app/cubits/app_cubit/app_cubit.dart';
 import 'package:shop_app/models/onboarding.dart';
 import 'package:shop_app/screens/shop_login_screen.dart';
+import 'package:shop_app/service/fuctions/colors.dart';
 import 'package:shop_app/service/fuctions/navigator_fun.dart';
+import 'package:shop_app/widgets/defult_buttons.dart';
 import 'package:shop_app/widgets/onboarding_builder.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -40,12 +42,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         return Scaffold(
           appBar: AppBar(
             actions: [
-              TextButton(
-                onPressed: () {
-                  navigatAndReplace(context, const ShopLoginScreen());
-                },
-                child: const Text('Skip'),
-              ),
+              deflutTextButton(
+                  onPressed: () => navigatAndReplace(
+                        context,
+                        ShopLoginScreen(),
+                      ),
+                  text: 'Skip'),
             ],
           ),
           body: Padding(
@@ -63,12 +65,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       if (index == onbordingList.length - 1) {
                         setState(() {
                           isLast = true;
-                          print('is last');
                         });
                       } else {
                         setState(() {
                           isLast = false;
-                          print('is not last');
                         });
                       }
                     },
@@ -91,9 +91,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         spacing: 5,
                       ),
                       */
-                        effect: const ExpandingDotsEffect(
+                        effect: ExpandingDotsEffect(
                           dotColor: Colors.grey,
-                          activeDotColor: Colors.deepOrange,
+                          activeDotColor: defultAppColor,
                           dotHeight: 10,
                           dotWidth: 10,
                           spacing: 5,
@@ -103,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     FloatingActionButton(
                       onPressed: () {
                         if (isLast) {
-                          navigatTo(context, const ShopLoginScreen());
+                          navigatAndReplace(context, ShopLoginScreen());
                         } else {
                           pageController.nextPage(
                               duration: const Duration(milliseconds: 750),

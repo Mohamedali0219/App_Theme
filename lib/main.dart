@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/bloc_observer.dart';
-import 'package:shop_app/cubits/cubit/app_cubit.dart';
+import 'package:shop_app/cubits/app_cubit/app_cubit.dart';
 import 'package:shop_app/service/local/cache_helper.dart';
 import 'package:shop_app/screens/onbording_screen.dart';
+import 'package:shop_app/service/remote/dio_helper.dart';
 import 'package:shop_app/widgets/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
   await CacheHelper
       .init(); // ! using async, await becuase the instance will be created only with the app running or change value
 

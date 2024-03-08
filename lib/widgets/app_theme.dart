@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shop_app/service/fuctions/colors.dart';
 
 ThemeData ligthTheme() => ThemeData(
       // primaryColor: Colors.deepOrange,
       // primarySwatch: Colors.deepOrange,
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+      colorScheme: ColorScheme.fromSeed(seedColor: defultAppColor),
 
       scaffoldBackgroundColor: Colors.white,
       fontFamily: 'open_sans',
@@ -21,13 +22,13 @@ ThemeData ligthTheme() => ThemeData(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
           )),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Colors.deepOrange,
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: defultAppColor,
         foregroundColor: Colors.white,
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.deepOrange,
+        selectedItemColor: defultAppColor,
         unselectedItemColor: Colors.grey,
         elevation: 20.0,
         backgroundColor: Colors.white,
@@ -45,7 +46,7 @@ ThemeData ligthTheme() => ThemeData(
 ThemeData darkTheme() => ThemeData(
       scaffoldBackgroundColor: Colors.black,
       fontFamily: 'open_sans',
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+      colorScheme: ColorScheme.fromSeed(seedColor: defultAppColor),
       // primarySwatch: Colors.deepOrange,
 
       appBarTheme: const AppBarTheme(
@@ -63,13 +64,13 @@ ThemeData darkTheme() => ThemeData(
           iconTheme: IconThemeData(
             color: Colors.white,
           )),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Colors.deepOrange,
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: defultAppColor,
         foregroundColor: Colors.black,
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.deepOrange,
+        selectedItemColor: defultAppColor,
         elevation: 20.0,
         backgroundColor: Colors.black,
         unselectedItemColor: Colors.grey,
